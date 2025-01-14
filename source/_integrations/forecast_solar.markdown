@@ -13,7 +13,6 @@ ha_domain: forecast_solar
 ha_platforms:
   - diagnostics
   - sensor
-ha_quality_scale: platinum
 ha_integration_type: service
 ---
 
@@ -101,7 +100,7 @@ updates (based on a higher data resolution), you could [sign up for one
 of their plans](https://doc.forecast.solar/doku.php?id=account_models#compare_plans).
 
 To enable the use of the API key with this integration, go to {% my integrations %}. 
-On the Forecast.Solar integration, select the cogwheel, then select **Configure**. Enter the
+Select the Forecast.Solar integration, then select **Configure**. Enter the
 API key for your account.
 
 ## Tweaking the estimations
@@ -118,7 +117,8 @@ the results a bit.
 
 The **damping** factor allows you to adjust and "damp" the results of your solar
 predictions in the morning and evening a bit and is a great method to make
-results less optimistic and more tuned to your reality.
+results less optimistic and more tuned to your reality. More details on damping can
+be found [here](https://doc.forecast.solar/damping).
 
 The **inverter** size can be used in a situation where the maximum power of your
 inverter is lower than the total power of all your solar panels (as entered under
@@ -132,7 +132,6 @@ To adjust the configuration settings for your Forecast.Solar integration
 instance:
 
 1. Browse to your Home Assistant instance.
-1. Go to **{% my integrations title="Settings > Devices & Services" %}**.
-1. If multiple instances of {{ name }} are configured, choose the instance you want to configure.
-1. Select the cogwheel.
-1. Select **Configure**.
+2. Go to **{% my integrations title="Settings > Devices & services" %}**.
+3. If multiple instances of {{ name }} are configured, choose the instance you want to configure.
+4. Select **Configure**.
