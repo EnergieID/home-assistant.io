@@ -11,11 +11,27 @@ ha_release: 2023.6
 ha_config_flow: true
 ha_codeowners:
     - '@JrtPec'
+    - '@molier'
 ---
 
 The `Energyid` integration makes it possible to transfer measurements collected with Home Assistant to [EnergyID](https://www.energyid.eu/), a cloud based energy management platform.
 
 The integration works by listening to changes in the state of selected entities within Home Assistant. When a change is detected, the new state is sent via HTTP POST to the [EnergyID Webhooks](https://app.energyid.eu/integrations/WebhookIn)
+
+## Use Cases
+
+The EnergyID integration is particularly useful for:
+
+- Long-term tracking of home energy consumption
+- Analyzing solar panel production over time
+- Monitoring and comparing utility usage across multiple properties
+- Creating detailed energy reports and analytics through the EnergyID platform
+
+## Known Limitations
+
+- The integration only supports one-way synchronization (Home Assistant to EnergyID)
+- Some data intervals (PT15M, PT5M) require a paid EnergyID subscription
+- Each entity requires its own webhook configuration
 
 ## Grabbing your Webhook URL
 
