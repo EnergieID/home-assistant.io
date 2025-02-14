@@ -43,11 +43,8 @@ You will need:
 ## How you can use this integration
 
 - **Long-term trend analysis**: Track energy patterns over years
-- **Solar performance monitoring**: Compare PV output across seasons
 - **Multi-site management**: Aggregate data from multiple properties
-- **Bill validation**: Cross-check utility invoices with actual consumption
-- **Sustainability reporting**: Generate carbon emission reports
-
+- ...
 {% include integrations/config_flow.md %}
 
 ## Configuration Options
@@ -134,7 +131,6 @@ Upload Interval (seconds):
 - **One-way synchronization**: Data flows only from Home Assistant → EnergyID
 - **Premium features**: Sub-1hour intervals require EnergyID subscription
 - **Entity limitations**: Each sensor requires separate webhook configuration
-- **Data latency**: EnergyID typically processes data within 5-15 minutes
 
 ## Troubleshooting
 
@@ -169,30 +165,6 @@ Upload Interval (seconds):
 
 {% include integrations/remove_device_service.md %}
 
-## Advanced Usage
-
-### Automation Examples
-
-```yaml
-# Force immediate upload
-service: energyid.force_upload
-data:
-  entity_id: sensor.solar_production
-
-# Change update interval
-service: energyid.set_update_interval
-data:
-  entity_id: sensor.grid_consumption
-  interval: 60  # 1 minute
-```
-
-### Energy Dashboard Integration
-
-Combine with Home Assistant's [Energy Dashboard](/integrations/energy) for:
-
-- Real-time local visualization
-- Short-term trend analysis
-- System health monitoring
 
 ---
 
