@@ -44,7 +44,7 @@ You will need:
 
 - **Long-term trend analysis**: Track energy patterns over years
 - **Multi-site management**: Aggregate data from multiple properties
-- ...
+- **etc**
 {% include integrations/config_flow.md %}
 
 ## Configuration Options
@@ -136,25 +136,16 @@ Upload Interval (seconds):
 
 ### Common Issues
 
-- **`Invalid webhook URL`**: Regenerate in EnergyID and update configuration
-- **`Non-numeric state`**: Check sensor's unit_of_measurement
+- **`Invalid webhook URL`**: Regenerate in EnergyID and update configuration.
+- **`Non-numeric state`**: Check sensor's unit_of_measurement.
 - **`Connection lost`**:
-  1. Verify network connectivity
-  2. Check EnergyID service status
-  3. Validate authentication credentials
+  1. Verify network connectivity.
+  2. Check EnergyID service status.
+  3. Validate webhook URL is still active.
 
-### Diagnostic Tools
+### Diagnostic Steps
 
-- Enable debug logging:
-
-  ```yaml
-  logger:
-    default: info
-    logs:
-      homeassistant.components.energyid: debug
-  ```
-
-- Review `energyid_*.log` files in Home Assistant config directory
+For detailed troubleshooting guidance, refer to Home Assistant's [troubleshooting documentation](/docs/configuration/troubleshooting/#enabling-debug-logging).
 
 ## Removing the Integration
 
@@ -164,7 +155,6 @@ Upload Interval (seconds):
 4. Choose **Delete Integration**
 
 {% include integrations/remove_device_service.md %}
-
 
 ---
 
