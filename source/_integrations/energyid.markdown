@@ -24,6 +24,7 @@ The **EnergyID** integration enables seamless transfer of energy metrics from Ho
 ## About EnergyID
 
 EnergyID provides tools for:
+
 - Historical energy consumption analysis
 - Solar production tracking across multiple sites
 - Utility bill management and validation
@@ -33,6 +34,7 @@ EnergyID provides tools for:
 ## Prerequisites
 
 You will need:
+
 1. Active EnergyID account with webhook permissions
 2. Webhook URL from EnergyID's integration settings
 3. Sensor entity in Home Assistant with valid numerical readings
@@ -70,20 +72,23 @@ Upload Interval (seconds):
 ## Key Features
 
 ### Data Handling
+
 - **Smart Upload Throttling**: Minimum 5-minute interval between updates
 - **Value Validation**: Automatic filtering of non-numeric states
-- **Connection Resilience**: 
+- **Connection Resilience**:
   - 3 retry attempts with exponential backoff
   - Automatic reconnection after network failures
   - Configurable retry intervals (1s, 2s, 4s)
 
 ### Metric Types
+
 - **Cumulative**: For ever-increasing counters (e.g., total kWh)
 - **Total**: Interval-based consumption (e.g., daily usage)
 - **Delta**: Change between measurements
 - **Gauge**: Instantaneous readings (e.g., temperature)
 
 ### Data Resolution Options
+
 | Interval | Description | Subscription Required |
 |----------|-------------|-----------------------|
 | PT5M     | 5-minute    | Premium               |
@@ -94,6 +99,7 @@ Upload Interval (seconds):
 ## Installation Guide
 
 ### Obtaining Webhook URL
+
 1. Log in to your EnergyID account
 2. Navigate to **Integrations** → **Incoming Webhooks**
 3. Create new webhook with:
@@ -102,6 +108,7 @@ Upload Interval (seconds):
 4. Copy the generated URL (format: `https://app.energyid.eu/integrations/WebhookIn/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`)
 
 ### Home Assistant Setup
+
 1. {% my config_flow_start title="Add EnergyID Integration" %} via Home Assistant UI
 2. Paste Webhook URL when prompted
 3. Select entity from dropdown list
@@ -111,11 +118,13 @@ Upload Interval (seconds):
 ## Data Flow Management
 
 ### Update Behavior
+
 - Immediate upload on state change
 - Minimum 5-minute interval between updates (configurable)
 - Last valid value persists during connection issues
 
 ### Connection Monitoring
+
 - Automatic health checks every 15 minutes
 - System log entries for connection status changes
 - Visual indicator in Home Assistant UI
@@ -130,6 +139,7 @@ Upload Interval (seconds):
 ## Troubleshooting
 
 ### Common Issues
+
 - **`Invalid webhook URL`**: Regenerate in EnergyID and update configuration
 - **`Non-numeric state`**: Check sensor's unit_of_measurement
 - **`Connection lost`**:
@@ -138,7 +148,9 @@ Upload Interval (seconds):
   3. Validate authentication credentials
 
 ### Diagnostic Tools
+
 - Enable debug logging:
+
   ```yaml
   logger:
     default: info
